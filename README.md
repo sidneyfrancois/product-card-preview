@@ -9,3 +9,7 @@ Projeto simples para treinamento de css básico e responsivo. Feito utilizando a
 - Uso de custom properties
 - Uso de media query
 - CSS custom reset (apenas os itens necessários)
+
+# Deploy
+
+[Netlify deploy](https://teal-wisp-864bd2.netlify.app/)
