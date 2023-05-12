@@ -3,6 +3,7 @@
 
 :root {
   --crl-primary-400: hsl(158, 36%, 37%);
+  --crl-primary-500: hsl(158, 36%, 20%);
   --crl-secondary-200: hsl(30, 38%, 92%);
 
   --crl-neutral-900: hsl(212, 21%, 14%);
@@ -30,6 +31,10 @@ body {
   height: 100%;
 }
 
+body {
+  line-height: 1.7;
+}
+
 input,
 button,
 textarea,
@@ -48,6 +53,12 @@ h6 {
   overflow-wrap: break-word;
 }
 
+h1,
+h2,
+h3 {
+  line-height: 1;
+}
+
 img,
 picture {
   display: block;
@@ -61,4 +72,113 @@ picture {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+body {
+  font-family: "Montserrat";
+  font-weight: var(--fw-regular);
+  font-size: 0.875rem;
+  color: var(--crl-neutral-400);
+  background-color: var(--crl-secondary-200);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+footer {
+  width: 100%;
+  display: inline-block;
+}
+
+.card {
+  --sidebar-padding: 1.5rem;
+  --sidebar-spacing: 1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--crl-neutral-100);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  max-width: 600px;
+}
+
+.card > * {
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .card {
+    flex-direction: row;
+  }
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sidebar-spacing);
+  padding: var(--sidebar-padding);
+}
+
+#intro-title {
+  font-size: 0.8125rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Fraunces";
+  font-size: 2rem;
+  color: var(--crl-neutral-900);
+}
+
+.prices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+#main-price {
+  font-size: 2rem;
+  font-family: "Fraunces";
+  color: var(--crl-primary-400);
+}
+
+#discount-price {
+  text-decoration: line-through;
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+  padding: 0.75em 1.5em;
+  border-radius: 0.5rem;
+
+  /* because of the icon shop */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+
+  background-color: var(--crl-primary-400);
+  color: var(--crl-neutral-100);
+  font-weight: var(--fw-bold);
+  font-size: 0.925rem;
+}
+
+button:is(:hover, :focus) {
+  background-color: var(--crl-primary-500);
+}
+
+button[data-icon="shopping-cart"]::before {
+  content: "";
+  background-image: url("images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
 }
