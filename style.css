@@ -9,22 +9,13 @@
 }
 
 /* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p {
+* {
   margin: 0;
 }
 
+html,
 body {
-  background-color: hsl(30, 38%, 92%);
-  font-family: "Montserrat";
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
 }
 
 input,
@@ -34,14 +25,21 @@ select {
   font: inherit;
 }
 
-img,
-picture {
-  max-width: 100%;
-  display: block;
+/* avoid horizontal scroll with big title and paragraph */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
-h1 {
-  font-family: "Fraunces";
+img,
+picture {
+  display: block;
+  max-width: 100%;
 }
 
 .attribution {
@@ -51,66 +49,4 @@ h1 {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
-
-p {
-  color: hsl(228, 12%, 48%);
-  font-size: 14px;
-}
-
-.card {
-  display: flex;
-  /* flex-wrap: wrap; */
-  height: 45vh;
-  max-width: 30%;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 10px;
-}
-
-.card > * {
-  width: 100%;
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-
-  padding: 2em;
-}
-
-#intro-title {
-  letter-spacing: 5px;
-}
-
-.sidebar button {
-  background-color: hsl(158, 36%, 37%);
-  color: hsl(0, 0%, 100%);
-  border: none;
-  border-radius: 5px;
-  padding: 0.8em;
-  width: 100%;
-  font-size: 14px;
-}
-
-.card button:before {
-  content: url(images/icon-cart.svg);
-  margin-right: 10px;
-}
-
-.prices {
-  display: flex;
-  gap: 2em;
-}
-
-#main-price {
-  font-family: "Fraunces";
-  color: hsl(158, 36%, 37%);
-  font-size: 30px;
-}
-
-#discount-price {
-  text-decoration: line-through;
-  align-self: center;
-  color: hsl(228, 12%, 48%);
 }
